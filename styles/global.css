@@ -1,0 +1,242 @@
+:root {
+  --main-color: #DE7064;
+  --dark-color: #2F2F2F;
+  --background-color: #E5E5E5;
+  --footer-color: #2f2f2f80;
+  --hover-color: #b25a50;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-color);
+}
+
+body {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 10px solid var(--dark-color);
+  margin: 0;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 3rem;
+  font-weight: 500;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.colored {
+  color: var(--main-color);
+}
+
+.tiles {
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiles-container {
+  display: grid;
+  grid-template-columns: repeat(3, 10rem);
+  grid-template-rows: repeat(3, 10rem);
+  gap: 1.5rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.fill--primary {
+  background-color: var(--main-color);
+}
+
+.fill--dark {
+  background-color: var(--dark-color);
+}
+
+.main-container {
+  display: flex;
+  box-shadow: 0px 4px 32px rgba(47, 47, 47, 0.2);
+  border-radius: 2rem;
+}
+
+.buttons-container {
+  background-color: var(--dark-color);
+  padding: 2rem;
+  width: 20.68rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  border-radius: 0 2rem 2rem 0;
+  position: relative;
+}
+
+button {
+  color: white;
+  width: 100%;
+  height: 4rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 0.5rem;
+  text-align: left;
+  padding-left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--main-color);
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.company-logo {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+
+footer {
+  margin: 2rem 0;
+  font-size: 0.87rem;
+  color:var(--footer-color)
+}
+
+.title-container {
+  width: 57.5rem;
+  padding: 0 2rem;
+}
+
+
+
+
+@media (max-width: 700px) {
+  .main-container {
+    flex-direction: column-reverse;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .buttons-container {
+    background-color: transparent;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem 2rem;
+    min-width: 24rem;
+  }
+
+  .button-label {
+    display: none;
+  }
+
+  button {
+    width: fit-content;
+    padding: 0 1.25rem;
+    box-shadow: none;
+  }
+
+  .company-logo {
+    bottom: unset;
+    align-self: center;
+  }
+  
+  path {
+    fill: var(--dark-color);
+  }
+
+  body {
+    padding: 0;
+    border: none;
+  }
+
+  .title-container {
+    height: 3rem;
+    display: block;
+    width: 100%;
+    background-color: var(--dark-color);
+    color: white;
+  }
+
+  h1 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .colored {
+    color: white;
+  }
+
+  .tiles-container {
+    background-color: transparent;
+    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .tiles {
+    background-color: white;
+    border: solid 1px;
+    width: 100%;
+    height: 4rem;
+    position: relative;
+  }
+
+  .tiles::after {
+    width: 1rem;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .fill--primary {
+    border-color: var(--main-color);
+  }
+  
+  .fill--primary > p {
+    color:var(--main-color);
+  }
+
+  .fill--primary::after {
+    background-color: var(--main-color);
+  }
+
+  .fill--dark {
+    border-color: var(--dark-color);
+  }
+  
+  .fill--dark > p {
+    color: var(--dark-color);
+  }
+
+  .fill--dark::after {
+    background-color: var(--dark-color);
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
